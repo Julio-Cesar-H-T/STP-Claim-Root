@@ -4,6 +4,7 @@
 
 Demostrar cómo un atacante puede inyectar BPDUs STP con prioridad superior a la del switch legítimo, forzando una reconvergencia del árbol de expansión y convirtiéndose en el nuevo Root Bridge. Esto redirige el tráfico de la red a través del atacante, permitiendo un MitM a nivel de capa 2.
 
+Link a la lista de reproducción: https://www.youtube.com/playlist?list=PL1bMSHFyMPr7W7DrFd-INmRRQDjGquFIV
 ---
 
 ## 📋 Objetivo del Script
@@ -130,20 +131,6 @@ VLAN0010
            Address  <MAC de Kali>    ← Kali es la nueva raíz
            Root port: Et0/3
 ```
-
----
-
-## 📸 Capturas de Pantalla
-
-> Insertar capturas en esta sección:
-
-1. **`img/01_stp_antes.png`** — `show spanning-tree vlan 10` en SW-1 antes del ataque. `This bridge is the root`.
-2. **`img/02_script_corriendo.png`** — Terminal Kali inyectando BPDUs. Contador de frames enviados.
-3. **`img/03_stp_durante.png`** — `show spanning-tree vlan 10` en SW-1 durante el ataque. Root ID muestra la MAC de Kali con Priority 10.
-4. **`img/04_topology_change.png`** — `show spanning-tree vlan 10 detail` mostrando `Topology changes` incrementando.
-5. **`img/05_ping_timeout.png`** — Ping continuo desde VPC-1 a VPC-2 mostrando timeouts durante la reconvergencia.
-
----
 
 ## 🛡️ Contra-medidas
 
